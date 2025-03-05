@@ -1,0 +1,13 @@
+# Generate a git ignore file
+
+.idea
+*.iml
+
+.gradle
+build/
+
+# Local configuration file
+local.properties
+
+/kotlin-js-store
+.kotlin
