@@ -1,8 +1,6 @@
 package fr.acart.wendy.website.elements.layout
 
 import androidx.compose.runtime.Composable
-import fr.acart.wendy.website.style.fillMaxHeight
-import fr.acart.wendy.website.style.fillMaxWidth
 import org.jetbrains.compose.web.css.FlexDirection
 import org.jetbrains.compose.web.css.FlexWrap
 import org.jetbrains.compose.web.dom.AttrBuilderContext
@@ -16,18 +14,12 @@ fun Row(
     verticalItemsAlignment: Alignment.Vertical = Alignment.Top,
     verticalContentAlignment: Alignment.Vertical = Alignment.Top,
     wrap: Boolean = false,
-    fillHeight: Boolean = false,
-    fillWidth: Boolean = false,
     content: ContentBuilder<HTMLDivElement>?,
 ) {
     Flex(
         direction = FlexDirection.Row,
         attrs = {
             classes("row")
-            style {
-                if (fillHeight) fillMaxHeight()
-                if (fillWidth) fillMaxWidth()
-            }
             attrs?.invoke(this)
         },
         justifyContent = horizontalArrangement.value,

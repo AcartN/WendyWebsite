@@ -1,46 +1,7 @@
 package fr.acart.wendy.website.style
 
-import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.CSSAutoKeyword
-
-@OptIn(ExperimentalComposeWebApi::class)
-fun StyleScope.centerVertically() {
-    top(50.percent)
-    transform {
-        translateY((-50).percent)
-    }
-}
-
-@OptIn(ExperimentalComposeWebApi::class)
-fun StyleScope.centerHorizontally() {
-    left(50.percent)
-    transform {
-        translateX((-50).percent)
-    }
-}
-
-@OptIn(ExperimentalComposeWebApi::class)
-fun StyleScope.center() {
-    top(50.percent)
-    left(50.percent)
-    transform {
-        translate((-50).percent, (-50).percent)
-    }
-}
-
-fun StyleScope.fillMaxWidth(percent: CSSSizeValue<CSSUnit.percent> = 100.percent) {
-    width(percent)
-}
-
-fun StyleScope.fillMaxHeight(percent: CSSSizeValue<CSSUnit.percent> = 100.percent) {
-    height(percent)
-}
-
-fun StyleScope.fillMaxSize() {
-    fillMaxWidth()
-    fillMaxHeight()
-}
 
 fun StyleScope.borderBottom(
     width: CSSNumeric? = null,

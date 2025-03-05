@@ -78,60 +78,61 @@ fun Footer() {
                 }
             }
         ) {
-            item(
-                contentAlignment = Alignment2D.TopStart(start = 116.px),
-                fillHeight = true,
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(5.px),
+                attrs = {
+                    style {
+                        align(Alignment2D.TopStart(start = 116.px))
+                        height(100.percent)
+                    }
+                },
+            ) {
+                for (color in listOf(Color.white, MyCSS.wendyGreen, MyCSS.lila)) {
+                    Div(
+                        attrs = {
+                            style {
+                                height(100.percent)
+                                width(13.px)
+                                backgroundColor(color)
+                            }
+                        }
+                    )
+                }
+            }
+            Column(
+                verticalArrangement = Arrangement.spacedBy(32.px, alignment = Alignment.CenterVertically),
+                horizontalItemAlignment = Alignment.CenterHorizontally,
+                attrs = {
+                    align(Alignment2D.Center)
+                },
             ) {
                 Row(
-                    horizontalArrangement = Arrangement.spacedBy(5.px),
-                    fillHeight = true,
+                    horizontalArrangement = Arrangement.spacedBy(64.px),
                 ) {
                     for (color in listOf(Color.white, MyCSS.wendyGreen, MyCSS.lila)) {
                         Div(
                             attrs = {
                                 style {
-                                    height(100.percent)
-                                    width(13.px)
+                                    height(100.px)
+                                    width(100.px)
                                     backgroundColor(color)
                                 }
                             }
                         )
                     }
                 }
-            }
-            item(contentAlignment = Alignment2D.Center) {
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(32.px, alignment = Alignment.CenterVertically),
-                    horizontalItemAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(64.px),
-                    ) {
-                        for (color in listOf(Color.white, MyCSS.wendyGreen, MyCSS.lila)) {
-                            Div(
-                                attrs = {
-                                    style {
-                                        height(100.px)
-                                        width(100.px)
-                                        backgroundColor(color)
-                                    }
-                                }
-                            )
+                NavLink(
+                    href = "/koala",
+                    attrs = {
+                        classes(MyCSS.hoverUnderline)
+                        style {
+                            color(Color.white)
+                            fontSize(16.px)
+                            fontFamily("Baloo", "sans-serif")
                         }
-                    }
-                    NavLink(
-                        href = "/koala",
-                        attrs = {
-                            classes(MyCSS.hoverUnderline)
-                            style {
-                                color(Color.white)
-                                fontSize(16.px)
-                                fontFamily("Baloo", "sans-serif")
-                            }
-                        },
-                    ) {
-                        Text("© Wendy Henault | Comportementaliste du chat - 2025 Tous droits réservés - CGV - Mentions Légales")
-                    }
+                    },
+                ) {
+                    Text("© Wendy Henault | Comportementaliste du chat - 2025 Tous droits réservés - CGV - Mentions Légales")
                 }
             }
         }
@@ -243,7 +244,7 @@ fun MainContent() {
         Column(
             attrs = {
                 style {
-                    fillMaxWidth()
+                    width(100.percent)
                     backgroundColor(Color.tomato)
                 }
             },
@@ -295,56 +296,52 @@ fun MainContent() {
                         width(600.px)
                     }
                 },
-                contentAlignment = Alignment2D.Center,
             ) {
-                item {
-                    Div(
-                        attrs = {
-                            style {
-                                backgroundColor(Color.blueviolet)
-                                height(200.px)
-                                width(200.px)
-                            }
-                        },
-                    )
-                }
-                item {
-                    Div(
-                        attrs = {
-                            style {
-                                backgroundColor(Color.tomato)
-                                height(150.px)
-                                width(150.px)
-                            }
-                        },
-                    )
-                }
-                val alignments = listOf(
-                    Alignment2D.BottomCenter,
-                    Alignment2D.BottomEnd,
-                    Alignment2D.BottomStart,
-                    Alignment2D.Center,
-                    Alignment2D.CenterEnd,
-                    Alignment2D.CenterStart,
-                    Alignment2D.TopCenter,
-                    Alignment2D.TopEnd,
-                    Alignment2D.TopStart,
-                )
-                for (alignment in alignments) {
-                    item(contentAlignment = alignment) {
-                        Div(
-                            attrs = {
-                                style {
-                                    backgroundColor(Color.darkgray)
-                                    height(100.px)
-                                    width(100.px)
-                                    textAlign("center")
-                                    alignContent(AlignContent.Center)
-                                }
-                            },
-                        ) {
-                            Text("${alignment::class}")
+                Div(
+                    attrs = {
+                        style {
+                            align(Alignment2D.Center)
+                            backgroundColor(Color.blueviolet)
+                            height(200.px)
+                            width(200.px)
                         }
+                    },
+                )
+                Div(
+                    attrs = {
+                        style {
+                            align(Alignment2D.Center)
+                            backgroundColor(Color.tomato)
+                            height(150.px)
+                            width(150.px)
+                        }
+                    },
+                )
+                val alignments = listOf(
+                    Alignment2D.BottomCenter to "BottomCenter",
+                    Alignment2D.BottomEnd to "BottomEnd",
+                    Alignment2D.BottomStart to "BottomStart",
+                    Alignment2D.Center to "Center",
+                    Alignment2D.CenterEnd to "CenterEnd",
+                    Alignment2D.CenterStart to "CenterStart",
+                    Alignment2D.TopCenter to "TopCenter",
+                    Alignment2D.TopEnd to "TopEnd",
+                    Alignment2D.TopStart to "TopStart",
+                )
+                for ((alignment, name) in alignments) {
+                    Div(
+                        attrs = {
+                            style {
+                                align(alignment)
+                                backgroundColor(Color.darkgray)
+                                height(100.px)
+                                width(100.px)
+                                textAlign("center")
+                                alignContent(AlignContent.Center)
+                            }
+                        },
+                    ) {
+                        Text(name)
                     }
                 }
             }
