@@ -249,11 +249,13 @@ fun MainContent() {
                 }
             },
             verticalArrangement = Arrangement.SpaceBetween,
-            horizontalItemAlignment = Alignment.Start,
+            horizontalItemAlignment = Alignment.CenterHorizontally,
         ) {
             Row(
                 attrs = {
                     style {
+                        marginHorizontal(20.px)
+                        marginVertical(50.px)
                         backgroundColor(Color.burlywood)
                     }
                 },
@@ -266,9 +268,11 @@ fun MainContent() {
                         attrs = {
                             style {
                                 backgroundColor(Color.cyan)
+                                borderRadius(100.percent)
                                 height(250.px)
                                 width(250.px)
                                 alignContent(AlignContent.Center)
+                                textAlign("center")
                             }
                         },
                     ) {
@@ -278,13 +282,15 @@ fun MainContent() {
                         attrs = {
                             style {
                                 backgroundColor(Color.gold)
+                                borderRadius(5.percent)
                                 height(100.px)
                                 width(100.px)
                                 alignContent(AlignContent.Center)
+                                textAlign("center")
                             }
                         },
                     ) {
-                        Text("Hello 2")
+                        Text("World")
                     }
                 }
             }
@@ -343,6 +349,20 @@ fun MainContent() {
                     ) {
                         Text(name)
                     }
+                }
+                Div(
+                    attrs = {
+                        style {
+                            align(Alignment2D.TopEnd(end = 100.px, top = 100.px))
+                            backgroundColor(Color.darkgray)
+                            height(100.px)
+                            width(100.px)
+                            textAlign("center")
+                            alignContent(AlignContent.Center)
+                        }
+                    },
+                ) {
+                    Text("TopEnd with offset")
                 }
             }
         }
