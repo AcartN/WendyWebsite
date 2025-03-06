@@ -22,7 +22,6 @@ fun BasicPage(
     Column(
         attrs = {
             style {
-                minWidth(1440.px)
                 width(100.percent)
                 minHeight(100.vh)
             }

@@ -23,7 +23,7 @@ fun Footer() {
         Box(
             attrs = {
                 style {
-                    width(1440.px)
+                    maxWidth(1440.px)
                     height(footerHeight)
                     margin(vertical = 0.px, horizontal = auto)
                 }

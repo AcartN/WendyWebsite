@@ -21,7 +21,7 @@ fun Header() {
                 position(Position.Absolute)
                 top(0.px)
                 zIndex(10)
-                minWidth(1440.px)
+                minWidth(100.percent)
                 paddingTop(24.px)
                 paddingBottom(24.px)
                 backgroundColor(rgba(255, 255, 255, 0.8))
@@ -34,7 +34,7 @@ fun Header() {
             attrs = {
                 style {
                     marginHorizontal(auto)
-                    maxWidth(1440.px)
+                    width(1440.px)
                 }
             },
             verticalItemsAlignment = Alignment.CenterVertically,

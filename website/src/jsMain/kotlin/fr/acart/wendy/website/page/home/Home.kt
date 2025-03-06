@@ -58,7 +58,6 @@ fun Home() {
                                 align(Alignment2D.BottomCenter)
                                 height(600.px)
                                 width(100.percent)
-                                maxWidth(1440.px)
                                 property("object-fit", "cover")
                             }
                         },
