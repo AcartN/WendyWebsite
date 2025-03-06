@@ -13,7 +13,7 @@ sealed interface Alignment2D {
     ) : Alignment2D {
         override fun StyleScope.place() {
             marginTop(top)
-            marginLeft(start)
+            marginStart(start)
             marginEnd(auto)
             marginBottom(auto)
         }
@@ -52,7 +52,7 @@ sealed interface Alignment2D {
     ) : Alignment2D {
 
         override fun StyleScope.place() {
-            marginLeft(start)
+            marginStart(start)
             marginEnd(auto)
             marginTop(auto)
             marginBottom(auto)
@@ -74,7 +74,7 @@ sealed interface Alignment2D {
     ) : Alignment2D {
 
         override fun StyleScope.place() {
-            marginRight(end)
+            marginEnd(end)
             marginStart(auto)
             marginTop(auto)
             marginBottom(auto)
@@ -89,7 +89,7 @@ sealed interface Alignment2D {
 
         override fun StyleScope.place() {
             marginBottom(bottom)
-            marginLeft(start)
+            marginStart(start)
             marginTop(auto)
             marginEnd(auto)
         }
@@ -116,7 +116,7 @@ sealed interface Alignment2D {
 
         override fun StyleScope.place() {
             marginBottom(bottom)
-            marginRight(end)
+            marginEnd(end)
             marginTop(auto)
             marginStart(auto)
         }

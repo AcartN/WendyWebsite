@@ -11,7 +11,7 @@ import org.w3c.dom.HTMLAnchorElement
 fun NavLink(
     href: String? = null,
     attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
-    content: ContentBuilder<HTMLAnchorElement>? = null
+    content: ContentBuilder<HTMLAnchorElement>? = null,
 ) {
     A(
         href = href,
