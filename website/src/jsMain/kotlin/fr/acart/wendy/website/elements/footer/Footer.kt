@@ -127,6 +127,11 @@ fun FooterDetails(
     Column(
         verticalArrangement = Arrangement.spacedBy(24.px, alignment = Alignment.CenterVertically),
         horizontalItemAlignment = Alignment.Start,
+        attrs = {
+            style {
+                minWidth(325.px)
+            }
+        }
     ) {
         FooterTitle(title)
         for (footerDetail in details) {
