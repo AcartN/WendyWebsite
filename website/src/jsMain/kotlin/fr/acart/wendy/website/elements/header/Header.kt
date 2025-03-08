@@ -18,7 +18,7 @@ fun Header() {
     org.jetbrains.compose.web.dom.Header(
         attrs = {
             style {
-                position(Position.Absolute)
+                position(Position.Sticky)
                 top(0.px)
                 zIndex(10)
                 minWidth(100.percent)
@@ -57,8 +57,7 @@ fun Header() {
                             navigateTo("/")
                         }
                         style {
-                            width(72.px)
-                            height(54.px)
+                            width(100.percent)
                             marginHorizontal(auto)
                         }
                         classes(WendyCSS.hoverZoom)

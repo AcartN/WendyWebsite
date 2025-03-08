@@ -40,7 +40,7 @@ fun FullLogo(
             attrs = {
                 style {
                     align(Alignment2D.Center)
-                    height(76.px)
+                    height(79.px)
                 }
             },
         )

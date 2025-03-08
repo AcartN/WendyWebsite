@@ -7,7 +7,6 @@ import fr.acart.wendy.website.elements.header.Header
 import fr.acart.wendy.website.elements.header.headerHeight
 import fr.acart.wendy.website.elements.layout.Alignment
 import fr.acart.wendy.website.elements.layout.Column
-import fr.acart.wendy.website.elements.layout.Spacer
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.Main
@@ -28,10 +27,6 @@ fun BasicPage(
         },
         horizontalItemAlignment = Alignment.CenterHorizontally,
     ) {
-        Spacer(
-            width = 100.percent,
-            height = headerHeight,
-        )
         Main(
             attrs = {
                 attrs?.invoke(this)
