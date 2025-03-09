@@ -7,6 +7,7 @@ import fr.acart.wendy.website.elements.UnorderedList
 import fr.acart.wendy.website.elements.layout.Alignment
 import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Row
+import fr.acart.wendy.website.elements.text.TextStyle
 import fr.acart.wendy.website.style.*
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
@@ -79,14 +80,13 @@ fun Header() {
                                 padding(0.px)
                                 margin(0.px)
                                 gap(40.px)
-                                fontSize(20.px)
-                                fontFamily("Baloo", "sans-serif")
-                                letterSpacing(0.percent)
-                                property("text-transform", "uppercase")
+                                with(TextStyle.Action1) {
+                                    applyStyle()
+                                }
                             }
                         }
                     ) {
-                        NavItem(href = "#", text = "Qu'est-ce qu'un comportementaliste ?")
+                        NavItem(href = "#", text = "Qui suis-je ?")
                         NavItem(href = "#", text = "Quand me consulter ?")
                         NavItem(href = "#", text = "Prestations")
                         NavItem(href = "#", text = "Témoignages")
