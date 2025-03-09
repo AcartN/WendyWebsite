@@ -6,6 +6,7 @@ import fr.acart.wendy.website.elements.layout.Alignment
 import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Column
 import fr.acart.wendy.website.elements.layout.Row
+import fr.acart.wendy.website.elements.text.TextStyle
 import fr.acart.wendy.website.style.WendyCSS
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Img
@@ -20,10 +21,10 @@ fun AllLinks() {
             }
         },
         horizontalItemAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.spacedBy(28.px, alignment = Alignment.CenterVertically),
+        verticalArrangement = Arrangement.spacedBy(64.px, alignment = Alignment.CenterVertically),
     ) {
         val links = listOf(
-            "Qu'est-ce qu'un comportementaliste ?",
+            "Qui suis-je ?",
             "Quand me consulter ?",
             "Mes prestations",
             "Témoignages",
@@ -63,17 +64,13 @@ fun AllLinks() {
                 )
                 NavLink(
                     href = "/",
+                    textStyle = TextStyle.Action2,
+                    textColor = if (index == links.lastIndex)
+                        Color.white
+                    else
+                        WendyCSS.wendyBlue,
                     attrs = {
                         classes(WendyCSS.hoverUnderline)
-                        style {
-                            fontFamily("Lemon Milk", "sans-serif")
-                            fontWeight("bold")
-                            fontSize(18.px)
-                            if (index == links.lastIndex)
-                                color(Color.white)
-                            else
-                                color(WendyCSS.wendyBlue)
-                        }
                     }
                 ) {
                     Text(link)

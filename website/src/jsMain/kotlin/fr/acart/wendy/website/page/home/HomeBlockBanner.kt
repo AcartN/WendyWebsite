@@ -3,6 +3,8 @@ package fr.acart.wendy.website.page.home
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.FullLogo
 import fr.acart.wendy.website.elements.layout.*
+import fr.acart.wendy.website.elements.text.Text
+import fr.acart.wendy.website.elements.text.TextStyle
 import fr.acart.wendy.website.style.WendyCSS
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Br
@@ -80,7 +82,7 @@ fun Banner() {
 
 @Composable
 fun TitleDivider() {
-    Div(
+    Text(
         attrs = {
             style {
                 width(100.percent)
@@ -88,15 +90,12 @@ fun TitleDivider() {
                 backgroundColor(WendyCSS.wendyBlue)
                 textAlign("center")
                 alignContent(AlignContent.Center)
-                color(Color.white)
-                fontFamily("Lemon Milk", "sans-serif")
-                fontWeight("bold")
-                fontSize(25.px)
             }
         },
-    ) {
-        Text("Wendy Henault | Comportementaliste du chat")
-    }
+        text = "Wendy Henault | Comportementaliste félin",
+        textStyle = TextStyle.CapH2,
+        color = Color.white,
+    )
 }
 
 @Composable
@@ -105,9 +104,9 @@ fun HookText() {
         attrs = {
             style {
                 color(WendyCSS.wendyBlue)
-                fontFamily("Lemon Milk", "sans-serif")
-                fontWeight("bold")
-                fontSize(34.px)
+                with(TextStyle.CapH1) {
+                    applyStyle()
+                }
             }
         },
     ) {

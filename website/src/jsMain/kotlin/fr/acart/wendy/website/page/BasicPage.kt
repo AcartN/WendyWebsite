@@ -20,6 +20,7 @@ fun BasicPage(
     Header()
     Column(
         attrs = {
+            attrs?.invoke(this)
             style {
                 width(100.percent)
                 minHeight(100.vh)
@@ -29,7 +30,6 @@ fun BasicPage(
     ) {
         Main(
             attrs = {
-                attrs?.invoke(this)
                 style {
                     margin(0.px)
                     width(100.percent)

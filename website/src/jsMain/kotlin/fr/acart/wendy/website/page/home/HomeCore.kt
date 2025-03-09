@@ -3,10 +3,12 @@ package fr.acart.wendy.website.page.home
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.NavLink
 import fr.acart.wendy.website.elements.layout.*
+import fr.acart.wendy.website.elements.text.Text
+import fr.acart.wendy.website.elements.text.TextStyle
 import fr.acart.wendy.website.style.WendyCSS
 import fr.acart.wendy.website.style.marginHorizontal
 import fr.acart.wendy.website.style.marginStart
-import fr.acart.wendy.website.style.marginVertical
+import fr.acart.wendy.website.style.paddingVertical
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.dom.Div
@@ -18,7 +20,7 @@ fun HomeCore() {
     Column(
         attrs = {
             style {
-                marginVertical(94.px)
+                paddingVertical(94.px)
                 width(100.percent)
             }
         },
@@ -66,6 +68,8 @@ fun SectionTestimonial() {
         }
         NavLink(
             href = "/testimonials",
+            textStyle = TextStyle.Action2,
+            textColor = Color.white,
             attrs = {
                 classes(WendyCSS.hoverUnderline)
                 style {
@@ -74,10 +78,6 @@ fun SectionTestimonial() {
                     marginHorizontal(auto)
                     alignContent(AlignContent.Center)
                     textAlign("center")
-                    fontFamily("Lemon Milk", "sans-serif")
-                    fontWeight("bold")
-                    fontSize(16.px)
-                    color(Color.white)
                     backgroundColor(WendyCSS.wendyBlue)
                     borderRadius(20.px)
                 }
@@ -121,19 +121,14 @@ fun TestimonialTitle() {
                 }
             }
         )
-        Div(
+        Text(
+            text = "Vos témoignages",
+            textStyle = TextStyle.CapH3,
+            color = WendyCSS.wendyBlue,
             attrs = {
-                style {
-                    align(Alignment2D.CenterStart(start = 204.px))
-                    fontFamily("Lemon Milk", "sans-serif")
-                    fontWeight("bold")
-                    fontSize(18.px)
-                    color(WendyCSS.wendyBlue)
-                }
+                align(Alignment2D.CenterStart(start = 204.px))
             }
-        ) {
-            Text("Vos témoignages")
-        }
+        )
     }
 }
 
@@ -234,18 +229,13 @@ fun TestimonialNickname(nickname: String) {
                 }
             }
         )
-        Div(
+        Text(
+            text = nickname,
+            textStyle = TextStyle.CapH3,
+            color = WendyCSS.wendyBlue,
             attrs = {
-                style {
-                    align(Alignment2D.Center)
-                    fontFamily("Lemon Milk", "sans-serif")
-                    fontWeight("bold")
-                    fontSize(18.px)
-                    color(WendyCSS.wendyBlue)
-                }
+                align(Alignment2D.Center)
             }
-        ) {
-            Text(nickname)
-        }
+        )
     }
 }
