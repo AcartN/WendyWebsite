@@ -7,6 +7,8 @@ import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Column
 import fr.acart.wendy.website.elements.text.Text
 import fr.acart.wendy.website.elements.text.TextStyle
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.WendyCSS
 import fr.acart.wendy.website.style.marginHorizontal
 import org.jetbrains.compose.web.css.*
@@ -26,8 +28,8 @@ fun Profile() {
         horizontalItemAlignment = Alignment.CenterHorizontally,
     ) {
         Img(
-            src = "/profile_wendy.png",
-            alt = "Profile Picture",
+            src = Images.profileWendy,
+            alt = Strings.altProfilePicture,
             attrs = {
                 style {
                     width(100.percent)
@@ -67,7 +69,7 @@ fun Profile() {
                         marginHorizontal(71.px)
                     }
                 },
-                text = "J’interviens dans l’ensemble du département de la Vienne (86) mais je suis également disponible en visioconférence.",
+                text = Strings.shortPresentation,
                 textStyle = TextStyle.TextDefault1,
                 color = Color.white,
             )
@@ -79,7 +81,7 @@ fun Profile() {
                     classes(WendyCSS.hoverUnderline)
                 }
             ) {
-                Text("@wendy_comportementaliste86")
+                Text(Strings.wendyInstagram)
             }
         }
     }

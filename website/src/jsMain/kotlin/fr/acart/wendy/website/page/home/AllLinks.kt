@@ -7,6 +7,8 @@ import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Column
 import fr.acart.wendy.website.elements.layout.Row
 import fr.acart.wendy.website.elements.text.TextStyle
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.WendyCSS
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Img
@@ -24,11 +26,11 @@ fun AllLinks() {
         verticalArrangement = Arrangement.spacedBy(64.px, alignment = Alignment.CenterVertically),
     ) {
         val links = listOf(
-            "Qui suis-je ?",
-            "Quand me consulter ?",
-            "Mes prestations",
-            "Témoignages",
-            "Me contacter et prendre rendez-vous",
+            Strings.navWhoAmI,
+            Strings.navWhenToConsult,
+            Strings.navServices,
+            Strings.navTestimonials,
+            Strings.navContactMe,
         )
 
         for ((index, link) in links.withIndex()) {
@@ -56,11 +58,11 @@ fun AllLinks() {
                         }
                     },
                     src = when {
-                        index == links.lastIndex -> "/patounette_2_white.svg"
-                        index % 2 == 0 -> "/patounette.svg"
-                        else -> "/patounette_2.svg"
+                        index == links.lastIndex -> Images.patounette2White
+                        index % 2 == 0 -> Images.patounette
+                        else -> Images.patounette2
                     },
-                    alt = "Paw",
+                    alt = Strings.altPaw,
                 )
                 NavLink(
                     href = "/",

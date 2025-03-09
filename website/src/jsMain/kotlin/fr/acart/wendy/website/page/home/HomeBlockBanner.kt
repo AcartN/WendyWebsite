@@ -5,6 +5,8 @@ import fr.acart.wendy.website.elements.FullLogo
 import fr.acart.wendy.website.elements.layout.*
 import fr.acart.wendy.website.elements.text.Text
 import fr.acart.wendy.website.elements.text.TextStyle
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.WendyCSS
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Br
@@ -47,8 +49,8 @@ fun Banner() {
             },
         ) {
             Img(
-                src = "/hp_cat_no_bg_1.png",
-                alt = "Cute Cat",
+                src = Images.homePageCatNoBackground,
+                alt = Strings.altCuteCat,
                 attrs = {
                     style {
                         align(Alignment2D.BottomCenter)
@@ -92,7 +94,7 @@ fun TitleDivider() {
                 alignContent(AlignContent.Center)
             }
         },
-        text = "Wendy Henault | Comportementaliste félin",
+        text = Strings.titleWendy,
         textStyle = TextStyle.CapH2,
         color = Color.white,
     )
@@ -110,10 +112,10 @@ fun HookText() {
             }
         },
     ) {
-        Text("Une communication")
+        Text(Strings.hook1)
         Br()
-        Text("sans griffes")
+        Text(Strings.hook2)
         Br()
-        Text("avec votre chat !")
+        Text(Strings.hook3)
     }
 }

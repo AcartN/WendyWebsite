@@ -3,6 +3,8 @@ package fr.acart.wendy.website.elements
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.layout.Alignment2D
 import fr.acart.wendy.website.elements.layout.Box
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -25,8 +27,8 @@ fun FullLogo(
         },
     ) {
         Img(
-            src = "/full_logo_cat.svg",
-            alt = "Full Logo cat",
+            src = Images.fullLogo,
+            alt = Strings.altLogo,
             attrs = {
                 style {
                     align(Alignment2D.Center)
@@ -35,8 +37,8 @@ fun FullLogo(
             },
         )
         Img(
-            src = "/logo.svg",
-            alt = "Logo cat",
+            src = Images.logo,
+            alt = Strings.altLogo,
             attrs = {
                 style {
                     align(Alignment2D.Center)

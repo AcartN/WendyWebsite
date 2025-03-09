@@ -8,6 +8,8 @@ import fr.acart.wendy.website.elements.layout.Alignment
 import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Row
 import fr.acart.wendy.website.elements.text.TextStyle
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.*
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
@@ -51,8 +53,8 @@ fun Header() {
                 }
             ) {
                 Img(
-                    src = "logo.svg",
-                    alt = "Logo du site : un chat",
+                    src = Images.logo,
+                    alt = Strings.altLogo,
                     attrs = {
                         onClick {
                             navigateTo("/")
@@ -62,7 +64,7 @@ fun Header() {
                             marginHorizontal(auto)
                         }
                         classes(WendyCSS.hoverZoom)
-                        title("Minou")
+                        title(Strings.minou)
                     },
                 )
             }
@@ -86,10 +88,10 @@ fun Header() {
                             }
                         }
                     ) {
-                        NavItem(href = "#", text = "Qui suis-je ?")
-                        NavItem(href = "#", text = "Quand me consulter ?")
-                        NavItem(href = "#", text = "Prestations")
-                        NavItem(href = "#", text = "Témoignages")
+                        NavItem(href = "#", text = Strings.navWhoAmI)
+                        NavItem(href = "#", text = Strings.navWhenToConsult)
+                        NavItem(href = "#", text = Strings.navServices)
+                        NavItem(href = "#", text = Strings.navTestimonials)
                     }
                 }
             }
@@ -103,8 +105,8 @@ fun Header() {
                 },
             ) {
                 Img(
-                    src = "contact_me.svg",
-                    alt = "Icône de contact",
+                    src = Images.contactMe,
+                    alt = Strings.altContactIcon,
                     attrs = {
                         onClick {
                             navigateTo("/contact")
@@ -115,7 +117,7 @@ fun Header() {
                             marginHorizontal(auto)
                         }
                         classes(WendyCSS.hoverZoom)
-                        title("Me contacter")
+                        title(Strings.navContactMe)
                     },
                 )
             }

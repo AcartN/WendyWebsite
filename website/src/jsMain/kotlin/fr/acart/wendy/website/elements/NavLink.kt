@@ -8,6 +8,7 @@ import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.jetbrains.compose.web.dom.ContentBuilder
+import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLAnchorElement
 
 @Composable
@@ -38,5 +39,38 @@ fun NavLink(
             attr("onClick", "return false;")
         },
         content = content,
+    )
+}
+
+@Composable
+fun NavLink(
+    href: String? = null,
+    text: String,
+    textStyle: TextStyle? = null,
+    textColor: CSSColorValue? = null,
+    attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
+) {
+    A(
+        href = href,
+        attrs = {
+            attrs?.invoke(this)
+            style {
+                textColor?.let {
+                    color(it)
+                }
+                textStyle?.run {
+                    applyStyle()
+                }
+            }
+            onClick {
+                if (href != null) {
+                    navigateTo(href)
+                }
+            }
+            attr("onClick", "return false;")
+        },
+        content = {
+            Text(text)
+        },
     )
 }

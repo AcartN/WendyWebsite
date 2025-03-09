@@ -5,6 +5,8 @@ import fr.acart.wendy.website.elements.NavLink
 import fr.acart.wendy.website.elements.layout.*
 import fr.acart.wendy.website.elements.text.Text
 import fr.acart.wendy.website.elements.text.TextStyle
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.WendyCSS
 import fr.acart.wendy.website.style.marginHorizontal
 import fr.acart.wendy.website.style.marginStart
@@ -83,7 +85,7 @@ fun SectionTestimonial() {
                 }
             }
         ) {
-            Text("Découvrir les témoignages")
+            Text(Strings.discoverTestimonials)
         }
     }
 }
@@ -122,7 +124,7 @@ fun TestimonialTitle() {
             }
         )
         Text(
-            text = "Vos témoignages",
+            text = Strings.testimonials,
             textStyle = TextStyle.CapH3,
             color = WendyCSS.wendyBlue,
             attrs = {
@@ -153,8 +155,8 @@ fun Testimonial(imgSrc: String, nickname: String, hasLurkingCat: Boolean) {
             TestimonialNickname(nickname)
         }
         Img(
-            src = if (hasLurkingCat) "/cat_badge_2.svg" else "/cat_badge_1.svg",
-            alt = "Cute Cat",
+            src = if (hasLurkingCat) Images.catBadge2 else Images.catBadge1,
+            alt = Strings.altCuteCat,
             attrs = {
                 style {
                     align(Alignment2D.TopStart)
@@ -165,8 +167,8 @@ fun Testimonial(imgSrc: String, nickname: String, hasLurkingCat: Boolean) {
         )
         if (hasLurkingCat) {
             Img(
-                src = "/cat_lurking.svg",
-                alt = "Cat lurking",
+                src = Images.catLurking,
+                alt = Strings.altCatLurking,
                 attrs = {
                     style {
                         align(Alignment2D.TopCenter)
@@ -182,7 +184,7 @@ fun Testimonial(imgSrc: String, nickname: String, hasLurkingCat: Boolean) {
 fun TestimonialImage(imgSrc: String) {
     Img(
         src = imgSrc,
-        alt = "Cute Cat",
+        alt = Strings.altCuteCat,
         attrs = {
             style {
                 width(366.px)

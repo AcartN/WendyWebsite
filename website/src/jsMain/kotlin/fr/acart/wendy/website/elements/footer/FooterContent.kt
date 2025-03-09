@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.layout.Alignment
 import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Row
+import fr.acart.wendy.website.resource.Images
+import fr.acart.wendy.website.resource.Strings
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.width
@@ -16,15 +18,15 @@ fun FooterContent() {
         verticalItemsAlignment = Alignment.Top,
     ) {
         FooterDetails(
-            title = "Me Contacter :",
+            title = Strings.contactMe,
             details = listOf(
-                Detail("/contact_me_white.svg", "Contact Me", "wendycomportementaliste86@gmail.com"),
-                Detail("/phone_white.svg", "Phone", "06.98.78.18.03")
+                Detail(Images.contactMeWhite, Strings.navContactMe, Strings.wendyEmail),
+                Detail(Images.phoneWhite, Strings.altPhone, Strings.wendyPhone)
             ),
         )
         Img(
-            src = "/full_logo_pink.svg",
-            alt = "Logo",
+            src = Images.fullLogoPink,
+            alt = Strings.altLogo,
             attrs = {
                 style {
                     width(155.px)
@@ -33,9 +35,9 @@ fun FooterContent() {
             },
         )
         FooterDetails(
-            title = "Me Suivre :",
+            title = Strings.followMe,
             details = listOf(
-                Detail("/instagram_white.svg", "Instagram", "@wendy_comportementaliste86"),
+                Detail(Images.instagramWhite, Strings.altInstagram, Strings.wendyInstagram),
             ),
         )
     }
