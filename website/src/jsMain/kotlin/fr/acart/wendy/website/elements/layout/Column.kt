@@ -14,10 +14,11 @@ fun Column(
     horizontalItemAlignment: Alignment.Horizontal = Alignment.Start,
     horizontalContentAlignment: Alignment.Horizontal = horizontalItemAlignment,
     wrap: Boolean = false,
+    reverse: Boolean = false,
     content: ContentBuilder<HTMLDivElement>?,
 ) {
     Flex(
-        direction = FlexDirection.Column,
+        direction = if (reverse) FlexDirection.ColumnReverse else FlexDirection.Column,
         attrs = {
             classes("column")
             attrs?.invoke(this)

@@ -1,4 +1,4 @@
-package fr.acart.wendy.website.page.home
+package fr.acart.wendy.website.page.home.presentation
 
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.NavLink
@@ -10,6 +10,8 @@ import fr.acart.wendy.website.elements.text.TextStyle
 import fr.acart.wendy.website.resource.Images
 import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.WendyCSS
+import fr.acart.wendy.website.style.borderRadiusBottom
+import fr.acart.wendy.website.style.borderRadiusTop
 import fr.acart.wendy.website.style.marginHorizontal
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
@@ -34,8 +36,7 @@ fun Profile() {
                 style {
                     width(100.percent)
                     height(424.px)
-                    property("border-top-left-radius", "20px")
-                    property("border-top-right-radius", "20px")
+                    borderRadiusTop(20.px)
                     property("object-fit", "cover")
                 }
             }
@@ -55,8 +56,7 @@ fun Profile() {
                     width(509.px)
                     height(263.px)
                     backgroundColor(WendyCSS.wendyBlue)
-                    property("border-bottom-left-radius", "20px")
-                    property("border-bottom-right-radius", "20px")
+                    borderRadiusBottom(20.px)
                 }
             },
             horizontalItemAlignment = Alignment.CenterHorizontally,

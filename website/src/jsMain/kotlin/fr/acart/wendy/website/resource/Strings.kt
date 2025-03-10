@@ -1,7 +1,7 @@
 package fr.acart.wendy.website.resource
 
 object Strings {
-    val copyRights = "© Wendy Henault | Comportementaliste félin - 2025 Tous droits réservés - CGV - Mentions Légales"
+    val copyrights = "© Wendy Henault | Comportementaliste félin - 2025 Tous droits réservés - CGV - Mentions Légales"
     val contactMe = "Me Contacter :"
     val followMe = "Me Suivre :"
     val navContactMe = "Me Contacter et prendre rendez-vous"

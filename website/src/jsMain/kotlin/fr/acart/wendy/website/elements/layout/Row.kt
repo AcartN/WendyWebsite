@@ -14,10 +14,11 @@ fun Row(
     verticalItemsAlignment: Alignment.Vertical = Alignment.Top,
     verticalContentAlignment: Alignment.Vertical = Alignment.Top,
     wrap: Boolean = false,
+    reverse: Boolean = false,
     content: ContentBuilder<HTMLDivElement>?,
 ) {
     Flex(
-        direction = FlexDirection.Row,
+        direction = if (reverse) FlexDirection.RowReverse else FlexDirection.Row,
         attrs = {
             classes("row")
             attrs?.invoke(this)
@@ -28,6 +29,7 @@ fun Row(
         alignItems = verticalItemsAlignment.alignItems,
         alignContent = verticalContentAlignment.alignContent,
         flexWrap = if (wrap) FlexWrap.Wrap else FlexWrap.Nowrap,
+
         content = content,
     )
 }

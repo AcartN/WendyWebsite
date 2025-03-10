@@ -63,7 +63,7 @@ fun Header() {
                             width(100.percent)
                             marginHorizontal(auto)
                         }
-                        classes(WendyCSS.hoverZoom)
+                        classes(WendyCSS.hoverMegaZoom)
                         title(Strings.minou)
                     },
                 )
@@ -116,7 +116,7 @@ fun Header() {
                             height(31.px)
                             marginHorizontal(auto)
                         }
-                        classes(WendyCSS.hoverZoom)
+                        classes(WendyCSS.hoverMegaZoom)
                         title(Strings.navContactMe)
                     },
                 )

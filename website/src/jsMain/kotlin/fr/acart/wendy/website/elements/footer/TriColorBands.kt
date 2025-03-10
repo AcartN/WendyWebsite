@@ -23,15 +23,28 @@ fun TriColorBands(
         },
     ) {
         for (color in listOf(Color.white, WendyCSS.wendyGreen, WendyCSS.lila)) {
-            Div(
-                attrs = {
-                    style {
-                        height(100.percent)
-                        width(13.px)
-                        backgroundColor(color)
-                    }
-                }
+            Rectangle(
+                color = color,
+                height = 100.percent,
+                width = 13.px,
             )
         }
     }
+}
+
+@Composable
+fun Rectangle(
+    color: CSSColorValue,
+    height: CSSNumericValue<out CSSUnit>,
+    width: CSSNumericValue<out CSSUnit>,
+) {
+    Div(
+        attrs = {
+            style {
+                height(height)
+                width(width)
+                backgroundColor(color)
+            }
+        }
+    )
 }

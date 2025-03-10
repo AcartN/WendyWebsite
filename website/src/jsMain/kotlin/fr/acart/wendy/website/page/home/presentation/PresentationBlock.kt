@@ -1,4 +1,4 @@
-package fr.acart.wendy.website.page.home
+package fr.acart.wendy.website.page.home.presentation
 
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.layout.Alignment
@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.css.maxWidth
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun SectionPresentation() {
+fun PresentationBlock() {
     Row(
         attrs = {
             style {

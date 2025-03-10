@@ -1,4 +1,4 @@
-package fr.acart.wendy.website.page.home
+package fr.acart.wendy.website.page.home.presentation
 
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.NavLink
@@ -10,9 +10,9 @@ import fr.acart.wendy.website.elements.text.TextStyle
 import fr.acart.wendy.website.resource.Images
 import fr.acart.wendy.website.resource.Strings
 import fr.acart.wendy.website.style.WendyCSS
+import fr.acart.wendy.website.style.size
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Img
-import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun AllLinks() {
@@ -37,10 +37,10 @@ fun AllLinks() {
             Row(
                 attrs = {
                     style {
-                        if (index == links.lastIndex)
-                            backgroundColor(WendyCSS.wendyBlue)
-                        else
-                            backgroundColor(WendyCSS.lila)
+                        when (index) {
+                            links.lastIndex -> backgroundColor(WendyCSS.wendyBlue)
+                            else -> backgroundColor(WendyCSS.lila)
+                        }
                         paddingLeft(32.px)
                         width(100.percent)
                         height(64.px)
@@ -53,8 +53,7 @@ fun AllLinks() {
                 Img(
                     attrs = {
                         style {
-                            width(36.px)
-                            height(36.px)
+                            size(36.px)
                         }
                     },
                     src = when {
@@ -66,6 +65,7 @@ fun AllLinks() {
                 )
                 NavLink(
                     href = "/",
+                    text = link,
                     textStyle = TextStyle.Action2,
                     textColor = if (index == links.lastIndex)
                         Color.white
@@ -74,9 +74,7 @@ fun AllLinks() {
                     attrs = {
                         classes(WendyCSS.hoverUnderline)
                     }
-                ) {
-                    Text(link)
-                }
+                )
             }
         }
     }

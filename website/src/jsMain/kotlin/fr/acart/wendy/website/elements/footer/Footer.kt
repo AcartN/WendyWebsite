@@ -3,6 +3,7 @@ package fr.acart.wendy.website.elements.footer
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.layout.*
 import fr.acart.wendy.website.style.WendyCSS
+import fr.acart.wendy.website.style.borderRadiusTop
 import fr.acart.wendy.website.style.margin
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
@@ -23,8 +24,7 @@ fun Footer() {
                     height(footerHeight)
                     margin(vertical = 0.px, horizontal = auto)
                     backgroundColor(WendyCSS.wendyBlue)
-                    property("border-top-left-radius", 30.px)
-                    property("border-top-right-radius", 30.px)
+                    borderRadiusTop(30.px)
                 }
             }
         ) {
@@ -35,9 +35,7 @@ fun Footer() {
             )
             TriColorBands(
                 attrs = {
-                    style {
-                        align(Alignment2D.TopStart(start = 116.px))
-                    }
+                    align(Alignment2D.TopStart(start = 116.px))
                 },
             )
             Column(

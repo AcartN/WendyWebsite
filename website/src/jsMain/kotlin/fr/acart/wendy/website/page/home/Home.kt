@@ -3,9 +3,13 @@ package fr.acart.wendy.website.page.home
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.layout.*
 import fr.acart.wendy.website.page.BasicPage
+import fr.acart.wendy.website.page.home.banner.Banner
+import fr.acart.wendy.website.page.home.presentation.PresentationBlock
+import fr.acart.wendy.website.page.home.testimonials.TestimonialBlock
 import fr.acart.wendy.website.style.WendyCSS
 import fr.acart.wendy.website.style.marginHorizontal
 import fr.acart.wendy.website.style.marginVertical
+import fr.acart.wendy.website.style.paddingVertical
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
@@ -19,8 +23,21 @@ fun Home() {
             }
         }
     ) {
-        HomeBlockBanner()
-        HomeCore()
+        Banner()
+        TitleDivider()
+        Column(
+            attrs = {
+                style {
+                    paddingVertical(94.px)
+                    width(100.percent)
+                }
+            },
+            horizontalItemAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(94.px, alignment = Alignment.CenterVertically),
+        ) {
+            PresentationBlock()
+            TestimonialBlock()
+        }
     }
 }
 
