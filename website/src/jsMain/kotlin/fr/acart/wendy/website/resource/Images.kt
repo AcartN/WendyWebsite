@@ -13,6 +13,7 @@ object Images {
     val patounette2 = "/patounette_2.svg"
     val patounette2White = "/patounette_2_white.svg"
     val homePageCatNoBackground = "/hp_cat_no_bg_1.png"
+    val whoAmIBanner = "/banner_who_am_i.jpg"
     val catBadge1 = "/cat_badge_1.svg"
     val catBadge2 = "/cat_badge_2.svg"
     val catLurking = "/cat_lurking.svg"

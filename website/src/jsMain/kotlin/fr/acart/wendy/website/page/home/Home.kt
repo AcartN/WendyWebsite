@@ -1,6 +1,7 @@
 package fr.acart.wendy.website.page.home
 
 import androidx.compose.runtime.Composable
+import fr.acart.wendy.website.elements.TitleDivider
 import fr.acart.wendy.website.elements.layout.Alignment
 import fr.acart.wendy.website.elements.layout.Arrangement
 import fr.acart.wendy.website.elements.layout.Column

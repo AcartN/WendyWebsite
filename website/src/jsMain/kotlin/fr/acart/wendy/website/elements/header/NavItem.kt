@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.ListItem
 import fr.acart.wendy.website.elements.NavLink
 import fr.acart.wendy.website.style.WendyCSS
-import fr.acart.wendy.website.style.WendyCSS.wendyBlue
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.dom.Text
 
@@ -12,6 +11,7 @@ import org.jetbrains.compose.web.dom.Text
 fun NavItem(
     href: String,
     text: String,
+    isSelected: Boolean,
 ) {
     ListItem {
         NavLink(
@@ -19,7 +19,10 @@ fun NavItem(
             attrs = {
                 classes(WendyCSS.hoverUnderline)
                 style {
-                    color(wendyBlue)
+                    when {
+                        isSelected -> color(WendyCSS.wendyGreen)
+                        else -> color(WendyCSS.wendyBlue)
+                    }
                 }
             }
         ) {

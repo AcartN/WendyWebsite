@@ -1,4 +1,4 @@
-package fr.acart.wendy.website.page.home
+package fr.acart.wendy.website.elements
 
 import androidx.compose.runtime.Composable
 import fr.acart.wendy.website.elements.text.Text

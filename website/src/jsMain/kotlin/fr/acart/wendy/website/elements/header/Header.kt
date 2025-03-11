@@ -1,6 +1,7 @@
 package fr.acart.wendy.website.elements.header
 
 import androidx.compose.runtime.Composable
+import fr.acart.wendy.website.LocalPath
 import fr.acart.wendy.website.Navigation.navigateTo
 import fr.acart.wendy.website.elements.NavLink
 import fr.acart.wendy.website.elements.UnorderedList
@@ -18,6 +19,7 @@ import org.jetbrains.compose.web.dom.Nav
 
 @Composable
 fun Header() {
+    val currentPath = LocalPath.current
     org.jetbrains.compose.web.dom.Header(
         attrs = {
             style {
@@ -88,10 +90,26 @@ fun Header() {
                             }
                         }
                     ) {
-                        NavItem(href = "#", text = Strings.navWhoAmI)
-                        NavItem(href = "#", text = Strings.navWhenToConsult)
-                        NavItem(href = "#", text = Strings.navServices)
-                        NavItem(href = "#", text = Strings.navTestimonials)
+                        NavItem(
+                            isSelected = currentPath.equals("/whoami", ignoreCase = true),
+                            href = "/whoami",
+                            text = Strings.navWhoAmI,
+                        )
+                        NavItem(
+                            isSelected = currentPath.equals("#", ignoreCase = true),
+                            href = "#",
+                            text = Strings.navWhenToConsult,
+                        )
+                        NavItem(
+                            isSelected = currentPath.equals("#", ignoreCase = true),
+                            href = "#",
+                            text = Strings.navServices,
+                        )
+                        NavItem(
+                            isSelected = currentPath.equals("#", ignoreCase = true),
+                            href = "#",
+                            text = Strings.navTestimonials,
+                        )
                     }
                 }
             }
@@ -108,9 +126,6 @@ fun Header() {
                     src = Images.contactMe,
                     alt = Strings.altContactIcon,
                     attrs = {
-                        onClick {
-                            navigateTo("/contact")
-                        }
                         style {
                             width(41.px)
                             height(31.px)
